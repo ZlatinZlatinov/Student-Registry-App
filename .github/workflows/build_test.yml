@@ -44,4 +44,15 @@ jobs:
     - name: Install packages/dependencies
       run: npm install
     - name: Run security tests
-      run: npm audit
+      run: npm audit 
+
+  deploy_to_prod:
+    runs-on: ubuntu-latest
+    needs: build_test
+    steps:
+      - name: Deploy to production
+        uses: johnbeynon/render-deploy-action@v0.0.8
+        with:
+          service-id: ${{ secrets.RENDER_DEPLOY_HOOK }}
+          api-key: ${{ secrets.RENDER_API_KEY }}
+          wait-for-success: true
