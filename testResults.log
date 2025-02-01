@@ -1,0 +1,26 @@
+
+> test
+> mocha tests/*.js
+
+
+
+  About page
+    √ Page title (401ms)
+
+  Add Students page
+    √ Page title
+    √ Students HTML form
+    √ Add valid student
+    √ Add invalid student
+
+  Home page
+    √ Page title
+    √ Students count
+
+  View Students page
+    √ Page title
+    √ Students list
+
+
+  9 passing (673ms)
+
